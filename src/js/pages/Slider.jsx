@@ -8,7 +8,8 @@ export default class Slider extends React.Component{
     render(){
         return(
             <div classname='slider-container'>
-                slider-container
+                <input type='button' className='slider-button' value='назад' />
+                <input type='button' className='slider-button' value='вперед' />
             </div>
         )
     }

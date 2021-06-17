@@ -4,12 +4,14 @@ export default class Home extends React.Component{
     constructor(props){
         super(props)
     }
-
+    openSlider(){
+        this.props.history.push('/slider')
+    }
     render(){
         return(
-            <div classname='home'>
+            <div className='home'>
                 <p className='home-text'>HELLO</p>
-                <a href='/slider' className='home-button'>Слайдер</a>
+                <a className='home-button' onClick={this.openSlider.bind(this)}>Слайдер</a>
             </div>
         )
     }

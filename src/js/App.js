@@ -3,6 +3,7 @@ import React from 'react';
 import {BrowserRouter, Redirect, Route, Switch} from 'react-router-dom'
 import Home from './pages/Home'
 import Slider from './pages/Slider'
+import Error404 from './pages/Error404';
 
 class App extends React.Component {
   render() {
@@ -13,7 +14,8 @@ class App extends React.Component {
       <Switch>
         <Route history={history} exact path='/' component={Home}/>
         <Route history={history} path='/slider' component={Slider}/>
-        <Redirect to='/'/>
+        <Route history={history} path='/error' component={Error404}/>
+        <Redirect to='/error'/>
       </Switch>
     </div>
     </BrowserRouter>
