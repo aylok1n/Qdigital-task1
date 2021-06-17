@@ -1,4 +1,4 @@
-import '../scss/components/App.css';
+import '../scss/components/App.scss';
 import React from 'react';
 import {BrowserRouter, Redirect, Route, Switch} from 'react-router-dom'
 import Home from './pages/Home'

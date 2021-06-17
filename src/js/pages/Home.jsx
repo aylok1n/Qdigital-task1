@@ -7,7 +7,7 @@ export default class Home extends React.Component{
 
     render(){
         return(
-            <div classname='home-container'>
+            <div classname='home'>
                 <p className='home-text'>HELLO</p>
                 <a href='/slider' className='home-button'>Слайдер</a>
             </div>
