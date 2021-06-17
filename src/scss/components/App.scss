@@ -1,24 +1,27 @@
+$bg-color-App:#e5e5e5;
+$bg-color-button:#000;
 .App{
   height: 100vh;
   text-align: center;
-  background-color: #e5e5e5;
+  background-color: $bg-color-App;
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
-}
-.home{
-  flex-direction: column;
-}
-.home-text{
-  font-size: 18px;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-}
-.home-button{
-  padding: 10px;
-  box-sizing: border-box;
-  background-color: #000;
-  color: #fff;
-  cursor: pointer;
+
+  .home{
+    flex-direction: column;
+  }
+  .home-text{
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .home-button{
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: $bg-color-button;
+    color: #fff;
+    cursor: pointer;
+  }
 }
