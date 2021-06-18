@@ -24,4 +24,14 @@ $bg-color-button:#000;
     color: #fff;
     cursor: pointer;
   }
+  .slider{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+  .slider-img{
+    width: 400px;
+    height: 300px;
+  }
 }
