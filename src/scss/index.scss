@@ -40,10 +40,24 @@ code {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+  }
+  .slider-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: row;
   }
   .slider-img{
-    width: 400px;
-    height: 300px;
+    width: 600px;
+    height: 400px;
+  }
+  .slider-button{
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: $bg-color-button;
+    color: #fff;
+    cursor: pointer;
+    margin: 10px;
   }
 }
