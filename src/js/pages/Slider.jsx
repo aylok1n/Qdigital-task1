@@ -9,11 +9,12 @@ import {nextImg, prevImg, changeSource, loadRemote} from '../redux/actions'
     goHome(){
         this.props.history.push('/')
     }
+
     async componentDidMount(){
-        await loadRemote()
-        this.setState(this.props.slider)
-        console.log(this.state)
+        this.props.loadRemote()
     }
+
+
     
     render(){
         return(
@@ -41,6 +42,6 @@ const mapDispatchToProps = {
     nextImg,
     prevImg,
     changeSource,
-    loadRemote
+    loadRemote,
 }
 export default connect(mapStateToProps,mapDispatchToProps)(Slider)

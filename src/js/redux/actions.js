@@ -17,10 +17,10 @@ export const changeSource = () => {
     }
 }
 export function loadRemote() {
-
     return async dispatch => {
         const response = await fetch('https://imagesapi.osora.ru/');
-        let json = await response.json();
+        const json = await response.json();
+        console.log(json)
         dispatch({ type: LOAD_REMOTE, payload: json})
     }
 }
