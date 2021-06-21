@@ -17,6 +17,7 @@ import { nextImg, prevImg, changeSource, setRemote } from '../redux/actions'
         const response = await fetch('https://imagesapi.osora.ru/');
         const json = await response.json();
         this.props.setRemote(json)
+        this.getLength()
     }
 
 
@@ -39,10 +40,10 @@ import { nextImg, prevImg, changeSource, setRemote } from '../redux/actions'
 
     onPrev() {
         this.getLength()
-        if (this.props.slider.imgId !== 0) {
-            this.props.prevImg(this.props.slider.imgId - 1)
-        } else { 
+        if (this.props.slider.imgId === 0) {
             this.props.prevImg(this.state.length - 1)
+        } else { 
+            this.props.prevImg(this.props.slider.imgId - 1)
         }
     }
 
@@ -76,6 +77,7 @@ import { nextImg, prevImg, changeSource, setRemote } from '../redux/actions'
 }
 
 const mapStateToProps = state => {
+    console.log(state)
     return state
 }
 
