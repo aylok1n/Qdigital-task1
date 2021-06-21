@@ -15,7 +15,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-.App{
+.App { 
   height: 100vh;
   text-align: center;
   background-color: $bg-color-App;
@@ -24,15 +24,15 @@ code {
   flex-direction: column;
   justify-content: center;
 
-  .home{
+  .home {
     flex-direction: column;
   }
-  .home-text{
+  .home-text {
     font-size: 18px;
     text-transform: uppercase;
     margin-bottom: 20px;
   }
-  .home-button{
+  .home-button {
     padding: 10px;
     box-sizing: border-box;
     background-color: $bg-color-button;
@@ -40,23 +40,23 @@ code {
     cursor: pointer;
     text-decoration: underline;
   }
-  .slider{
+  .slider {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
   }
-  .slider-wrapper{
+  .slider-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
   }
-  .slider-img{
+  .slider-img {
     width: 600px;
     height: 400px;
   }
-  .slider-button{
+  .slider-button {
     padding: 10px;
     box-sizing: border-box;
     background-color: $bg-color-button;
@@ -64,7 +64,7 @@ code {
     cursor: pointer;
     margin: 10px 10px 0px 10px;
   }
-  .slider-go-home-button{
+  .slider-go-home-button {
     padding: 10px;
     box-sizing: border-box;
     background-color: $bg-color-button;
