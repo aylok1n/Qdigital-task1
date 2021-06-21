@@ -10,7 +10,7 @@ export const sliderReducer = (state = initialState, action) => {
         case CHANGE_SOURCE:
             return {...state, source: action.payload}
         case SET_REMOTE:     
-                return {...state, remote: action.payload}
+            return {...state, remote: action.payload}
 
         default: return state
     }
