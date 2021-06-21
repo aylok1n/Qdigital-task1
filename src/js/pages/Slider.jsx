@@ -35,7 +35,6 @@ import {nextImg, prevImg, changeSource, loadRemote} from '../redux/actions'
     }
 }
 const mapStateToProps = state => {
-    console.log(state)
     return state
 }
 const mapDispatchToProps = {

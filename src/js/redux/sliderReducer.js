@@ -6,7 +6,6 @@ export const sliderReducer = (state = initialState, action) => {
     if (state.source == 'local'){
         length = state.local.length
     } else length = state.remote.length
-    console.log(length)
     switch (action.type) {
         case NEXT_IMG:
             if(state.imgId !== length - 1 ){
