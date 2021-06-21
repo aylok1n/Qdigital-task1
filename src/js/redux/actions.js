@@ -1,4 +1,4 @@
-import { CHANGE_SOURCE, LOAD_REMOTE, NEXT_IMG, PREV_IMG } from "./ActionTypes"
+import { CHANGE_SOURCE, LOAD_REMOTE, NEXT_IMG, PREV_IMG } from "./actionTypes"
 
 export const nextImg = () => {
     return {

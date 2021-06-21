@@ -1,15 +1,16 @@
 import '../scss/index.scss'
 import React from 'react';
-import {BrowserRouter, Redirect, Route, Switch} from 'react-router-dom'
+import { BrowserRouter as Router, Redirect, Route, Switch} from 'react-router-dom'
+import { createBrowserHistory } from "history";
 import Home from './pages/Home'
 import Slider from './pages/Slider'
 import Error404 from './pages/Error404';
 
 class App extends React.Component {
   render() {
-  const { history } = this.props
+    const history = createBrowserHistory();
   return (
-    <BrowserRouter>
+    <Router >
     <div className="App">
       <Switch>
         <Route history={history} exact path='/' component={Home}/>
@@ -18,7 +19,7 @@ class App extends React.Component {
         <Redirect to='/error'/>
       </Switch>
     </div>
-    </BrowserRouter>
+    </Router>
   )};
 }
 export default App;

@@ -1,5 +1,5 @@
 import { initialState } from "./initialState"
-import { CHANGE_SOURCE, NEXT_IMG, PREV_IMG, LOAD_REMOTE } from "./ActionTypes"
+import { CHANGE_SOURCE, NEXT_IMG, PREV_IMG, LOAD_REMOTE } from "./actionTypes"
 
 export const sliderReducer = (state = initialState, action) => {
     let length = 0
