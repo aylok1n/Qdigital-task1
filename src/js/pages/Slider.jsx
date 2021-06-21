@@ -13,8 +13,6 @@ import {nextImg, prevImg, changeSource, loadRemote} from '../redux/actions'
     async componentDidMount(){
         this.props.loadRemote()
     }
-
-
     
     render(){
         return(
@@ -27,8 +25,9 @@ import {nextImg, prevImg, changeSource, loadRemote} from '../redux/actions'
                     }
                     <div className="slider-button" onClick={this.props.nextImg}>next</div>
                 </div>
-                <a className='slider-button' onClick={this.props.changeSource}>switch to </a>
-                <a className='slider-button' onClick={this.goHome.bind(this)}>back to main</a>
+                <a className='slider-button' onClick={this.props.changeSource}>switch to {
+                this.props.slider.source == 'local' ? 'remote' : 'local'}</a>
+                <a className='slider-go-home-button' onClick={this.goHome.bind(this)}>back to main</a>
             </div>
         
         )
