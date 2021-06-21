@@ -1,11 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux'
-import {Link} from 'react-router-dom'
-import {nextImg, prevImg, changeSource, setRemote} from '../redux/actions'
+import { Link } from 'react-router-dom'
+import { nextImg, prevImg, changeSource, setRemote } from '../redux/actions'
 
  class Slider extends React.Component{
 
-    constructor(props){
+    constructor(props) {
         super(props)
         this.state = {
             length: 0
@@ -20,7 +20,7 @@ import {nextImg, prevImg, changeSource, setRemote} from '../redux/actions'
     }
 
 
-    getLength(){
+    getLength() {
         if (this.props.slider.source === 'local') {
             this.setState({length : this.props.slider.local.length})
         } else if (this.props.slider.source === 'remote'){
@@ -65,8 +65,9 @@ import {nextImg, prevImg, changeSource, setRemote} from '../redux/actions'
                     }
                     <div className="slider-button" onClick={this.onNext.bind(this)}>next</div>
                 </div>
-                <button className='slider-button' onClick={this.onChangeSource.bind(this)}>switch to {
-                this.props.slider.source === 'local' ? 'remote' : 'local'}</button>
+                <button className='slider-button' onClick={this.onChangeSource.bind(this)}>
+                    switch to { this.props.slider.source === 'local' ? 'remote' : 'local' }
+                </button>
                 <Link to="/" className='slider-go-home-button'>back to main</Link>
             </div>
         
