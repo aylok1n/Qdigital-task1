@@ -8,7 +8,7 @@ import Error404 from './pages/Error404';
 
 class App extends React.Component {
   render() {
-    const history = createBrowserHistory();
+  const history = createBrowserHistory();
   return (
     <Router >
     <div className="App">

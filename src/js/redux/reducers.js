@@ -1,5 +1,5 @@
 import { initialState } from "./initialState"
-import { CHANGE_SOURCE, NEXT_IMG, PREV_IMG, LOAD_REMOTE } from "./actionTypes"
+import { CHANGE_SOURCE, NEXT_IMG, PREV_IMG, SET_REMOTE } from "./actionTypes"
 
 export const sliderReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -9,7 +9,7 @@ export const sliderReducer = (state = initialState, action) => {
             return {...state, imgId: action.payload}
         case CHANGE_SOURCE:
             return {...state, source: action.payload}
-        case LOAD_REMOTE:     
+        case SET_REMOTE:     
                 return {...state, remote: action.payload}
 
         default: return state

@@ -1,13 +1,11 @@
 import React from 'react';
+import {Link} from 'react-router-dom'
 
 export default class Error404 extends React.Component{
-    goHome(){
-        this.props.history.push('/')
-    }
-    render(){
-        return(
+    render() {
+        return (
             <div classname='home'>
-                <a className='home-button' onClick={this.goHome.bind(this)}>Вернуться на главную</a>
+                <Link to="/" className='slider-go-home-button'>back to main</Link>
             </div>
         )
     }
