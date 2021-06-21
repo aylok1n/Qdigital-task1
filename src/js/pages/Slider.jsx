@@ -10,6 +10,9 @@ import { actions } from '../redux/actions'
         this.state = {
             length: 0
         }
+        this.onNext = this.onNext.bind(this)
+        this.onPrev = this.onPrev.bind(this)
+        this.onChangeSource = this.onChangeSource.bind(this)
     }    
 
     
@@ -58,14 +61,14 @@ import { actions } from '../redux/actions'
         return(
             <div className='slider'>
                 <div className="slider-wrapper">
-                    <div className="slider-button" onClick={this.onPrev.bind(this)}>prev</div>
+                    <div className="slider-button" onClick={this.onPrev}>prev</div>
                     { (this.props.source === 'local' ) ? 
                         <img className="slider-img" alt="" src={this.props.local[this.props.imgId]}/> :
                         <img className="slider-img" alt="" src={this.props.remote[this.props.imgId]}/>
                     }
-                    <div className="slider-button" onClick={this.onNext.bind(this)}>next</div>
+                    <div className="slider-button" onClick={this.onNext}>next</div>
                 </div>
-                <button className='slider-button' onClick={this.onChangeSource.bind(this)}>
+                <button className='slider-button' onClick={this.onChangeSource}>
                     switch to { this.props.source === 'local' ? 'remote' : 'local' }
                 </button>
                 <Link to="/" className='slider-go-home-button'>back to main</Link>
