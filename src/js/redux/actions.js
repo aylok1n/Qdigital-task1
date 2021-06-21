@@ -1,24 +1,26 @@
 import { CHANGE_SOURCE, LOAD_REMOTE, NEXT_IMG, PREV_IMG } from "./actionTypes"
 
-export const nextImg = () => {
+export const nextImg = (nextImgId) => {
     return {
         type: NEXT_IMG,
+        payload: nextImgId,
     }
 }
-export const prevImg = () => {
+export const prevImg = (prevImgId) => {
     return {
         type: PREV_IMG,
+        payload: prevImgId,
     }
 }
-export const changeSource = () => {
+export const changeSource = (source) => {
     return {
         type: CHANGE_SOURCE,
+        payload: source,
     }
 }
-export function loadRemote() {
-    return async dispatch => {
-        const response = await fetch('https://imagesapi.osora.ru/');
-        const json = await response.json();
-        dispatch({ type: LOAD_REMOTE, payload: json})
+export const loadRemote = (json) => {
+    return { 
+        type: LOAD_REMOTE, 
+        payload: json,
     }
 }
