@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { nextImg, prevImg, changeSource, setRemote } from '../redux/actions'
+import { actions } from '../redux/actions'
 
  class Slider extends React.Component{
 
@@ -17,42 +17,41 @@ import { nextImg, prevImg, changeSource, setRemote } from '../redux/actions'
         const response = await fetch('https://imagesapi.osora.ru/');
         const json = await response.json();
         this.props.setRemote(json)
-        this.getLength()
+        this.setLength()
     }
 
 
-    getLength() {
-        if (this.props.slider.source === 'local') {
-            this.setState({length : this.props.slider.local.length})
-        } else if (this.props.slider.source === 'remote'){
-            this.setState({length : this.props.slider.remote.length})
+    setLength() {
+        if (this.props.source === 'local') {
+            this.setState({length : this.props.local.length})
+        } else if (this.props.source === 'remote'){
+            this.setState({length : this.props.remote.length})
         }
     }
 
     onNext() {
-        this.getLength()
-        if(this.props.slider.imgId !== this.state.length - 1) {
-            this.props.nextImg(this.props.slider.imgId + 1)
+        if(this.props.imgId !== this.state.length - 1) {
+            this.props.nextImg(this.props.imgId + 1)
         } else { 
             this.props.nextImg(0)
         }
     }
 
     onPrev() {
-        this.getLength()
-        if (this.props.slider.imgId === 0) {
+        if (this.props.imgId === 0) {
             this.props.prevImg(this.state.length - 1)
         } else { 
-            this.props.prevImg(this.props.slider.imgId - 1)
+            this.props.prevImg(this.props.imgId - 1)
         }
     }
 
     onChangeSource() {
-        if (this.props.slider.source === 'local') {
+        if (this.props.source === 'local') {
             this.props.changeSource('remote')
-        } else if (this.props.slider.source === 'remote') {
+        } else if (this.props.source === 'remote') {
             this.props.changeSource('local')
         }
+        this.setLength()
     }
  
     render(){
@@ -60,14 +59,14 @@ import { nextImg, prevImg, changeSource, setRemote } from '../redux/actions'
             <div className='slider'>
                 <div className="slider-wrapper">
                     <div className="slider-button" onClick={this.onPrev.bind(this)}>prev</div>
-                    { (this.props.slider.source === 'local' ) ? 
-                        <img className="slider-img" alt="" src={this.props.slider.local[this.props.slider.imgId]}/> :
-                        <img className="slider-img" alt="" src={this.props.slider.remote[this.props.slider.imgId]}/>
+                    { (this.props.source === 'local' ) ? 
+                        <img className="slider-img" alt="" src={this.props.local[this.props.imgId]}/> :
+                        <img className="slider-img" alt="" src={this.props.remote[this.props.imgId]}/>
                     }
                     <div className="slider-button" onClick={this.onNext.bind(this)}>next</div>
                 </div>
                 <button className='slider-button' onClick={this.onChangeSource.bind(this)}>
-                    switch to { this.props.slider.source === 'local' ? 'remote' : 'local' }
+                    switch to { this.props.source === 'local' ? 'remote' : 'local' }
                 </button>
                 <Link to="/" className='slider-go-home-button'>back to main</Link>
             </div>
@@ -77,15 +76,11 @@ import { nextImg, prevImg, changeSource, setRemote } from '../redux/actions'
 }
 
 const mapStateToProps = state => {
-    console.log(state)
     return state
 }
 
 const mapDispatchToProps = {
-    nextImg,
-    prevImg,
-    changeSource,
-    setRemote,
+    ...actions
 }
 
 export default connect(mapStateToProps,mapDispatchToProps)(Slider)
