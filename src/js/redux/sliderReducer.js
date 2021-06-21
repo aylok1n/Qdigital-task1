@@ -3,7 +3,7 @@ import { CHANGE_SOURCE, NEXT_IMG, PREV_IMG, LOAD_REMOTE } from "./ActionTypes"
 
 export const sliderReducer = (state = initialState, action) => {
     let length = 0
-    if (state.source == 'local'){
+    if (state.source === 'local'){
         length = state.local.length
     } else length = state.remote.length
     switch (action.type) {

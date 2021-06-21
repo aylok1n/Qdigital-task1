@@ -19,7 +19,7 @@ import {nextImg, prevImg, changeSource, loadRemote} from '../redux/actions'
             <div className='slider'>
                 <div className="slider-wrapper">
                     <div className="slider-button" onClick={this.props.prevImg}>prev</div>
-                    { (this.props.slider.source == 'local' ) ? 
+                    { (this.props.slider.source === 'local' ) ? 
                         <img className="slider-img" alt="" src={this.props.slider.local[this.props.slider.imgId]}/> :
                         <img className="slider-img" alt="" src={this.props.slider.remote[this.props.slider.imgId]}/>
                     }
