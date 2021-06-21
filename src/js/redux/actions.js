@@ -1,4 +1,9 @@
-import { CHANGE_SOURCE, SET_REMOTE, NEXT_IMG, PREV_IMG } from "./actionTypes"
+import {
+    CHANGE_SOURCE,
+    SET_REMOTE,
+    NEXT_IMG,
+    PREV_IMG
+} from "./actionTypes"
 
 const nextImg = (nextImgId) => {
     return {
@@ -21,10 +26,15 @@ const changeSource = (source) => {
     }
 }
 const setRemote = (json) => {
-    return { 
-        type: SET_REMOTE, 
+    return {
+        type: SET_REMOTE,
         payload: json,
     }
 }
 
-export const actions = {nextImg, prevImg, changeSource, setRemote}
+export const actions = {
+    nextImg,
+    prevImg,
+    changeSource,
+    setRemote
+}
