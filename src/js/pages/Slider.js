@@ -1,8 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import { Link } from 'react-router-native'
-import {   View, Text } from 'react-native';
+import { View, Text, Button, Image, TouchableOpacity } from 'react-native';
 import { actions } from '../redux/actions'
+import { styles } from '../../styles/styles'
 
  class Slider extends React.Component{
 
@@ -60,21 +61,28 @@ import { actions } from '../redux/actions'
  
     render(){
         return(
-            // <div className='slider'>
-            //     <div className="slider-wrapper">
-            //         <div className="slider-button" onClick={this.onPrev}>prev</div>
-            //         { (this.props.source === 'local' ) ? 
-            //             <img className="slider-img" alt="" src={this.props.local[this.props.imgId]}/> :
-            //             <img className="slider-img" alt="" src={this.props.remote[this.props.imgId]}/>
-            //         }
-            //         <div className="slider-button" onClick={this.onNext}>next</div>
-            //     </div>
-            //     <button className='slider-button' onClick={this.onChangeSource}>
-            //         switch to { this.props.source === 'local' ? 'remote' : 'local' }
-            //     </button>
-            //     <Link to="/" className='slider-go-home-button'>back to main</Link>
-            // </div>
-            <Link to="/" ><Text>back to main</Text></Link>
+            <View style={styles.slider}>
+                <View style={styles.sliderWrapper}>
+                    <TouchableOpacity style={styles.sliderButton} onPress={this.onPrev}>
+                        <Text style={styles.sliderButtonText}>Prev</Text>
+                    </TouchableOpacity>
+                    { (this.props.source === 'local' ) ? 
+                        <Image style={styles.sliderImg} source={this.props.local[this.props.imgId]}/> :
+                        <Image style={styles.sliderImg} source={{uri : this.props.remote[this.props.imgId]}}/>
+                    }
+                    <TouchableOpacity style={styles.sliderButton} onPress={this.onNext}>
+                        <Text style={styles.sliderButtonText}>Next</Text>
+                    </TouchableOpacity>
+                </View>
+                <TouchableOpacity style={styles.sliderButton} onPress={this.onChangeSource}>
+                        <Text style={styles.sliderButtonText}>
+                            switch to { this.props.source === 'local' ? 'remote' : 'local' }
+                        </Text>
+                </TouchableOpacity>
+                <Link style={styles.sliderButton} to="/" >
+                    <Text style={styles.sliderButtonText}>back to main</Text>
+                </Link>
+            </View>
         )
     }
 }
