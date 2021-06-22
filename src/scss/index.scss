@@ -1,0 +1,84 @@
+@import "./components/reset";
+
+$bg-color-App:#e5e5e5;
+$bg-color-button:#000;
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.App {
+  height: 100vh;
+  text-align: center;
+  background-color: $bg-color-App;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+  .home {
+    flex-direction: column;
+  }
+
+  .home-text {
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  .home-button {
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: $bg-color-button;
+    color: #fff;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  .slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .slider-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+
+  .slider-img {
+    width: 600px;
+    height: 400px;
+  }
+
+  .slider-button {
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: $bg-color-button;
+    color: #fff;
+    cursor: pointer;
+    margin: 10px 10px 0px 10px;
+  }
+
+  .slider-go-home-button {
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: $bg-color-button;
+    color: #fff;
+    cursor: pointer;
+    margin: 10px 10px 0px 10px;
+    text-decoration: underline;
+  }
+}
