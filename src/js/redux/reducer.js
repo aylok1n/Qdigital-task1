@@ -5,7 +5,10 @@ import {
     CHANGE_SOURCE,
     NEXT_IMG,
     PREV_IMG,
-    SET_REMOTE
+    SET_REMOTE,
+    NEXT_AUDIO,
+    PREV_AUDIO,
+    PLAY_PAUSE
 } from "./actionTypes"
 
 export const reducer = (state = initialState, action) => {
@@ -14,21 +17,34 @@ export const reducer = (state = initialState, action) => {
             return {
                 ...state, imgId: action.payload
             }
-            case PREV_IMG:
-                return {
-                    ...state, imgId: action.payload
-                }
-                case CHANGE_SOURCE:
-                    return {
-                        ...state, source: action.payload
-                    }
-                    case SET_REMOTE:
-                        return {
-                            ...state, remote: action.payload
-                        }
+        case PREV_IMG:
+            return {
+                ...state, imgId: action.payload
+            }
+        case CHANGE_SOURCE:
+            return {
+                 ...state, source: action.payload
+            }
+        case SET_REMOTE:
+             return {
+                 ...state, remote: action.payload
+            }
 
-                        default:
-                            return state
+        case NEXT_AUDIO:
+            return {
+                 ...state, audioId: action.payload
+            }
+        case PREV_AUDIO:
+            return {
+                 ...state, audioId: action.payload
+            }
+        case PLAY_PAUSE:
+            return {
+                ...state, isPlay: action.payload
+            }
+
+        default:
+            return state
     }
 
 }

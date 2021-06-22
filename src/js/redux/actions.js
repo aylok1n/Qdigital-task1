@@ -2,7 +2,10 @@ import {
     CHANGE_SOURCE,
     SET_REMOTE,
     NEXT_IMG,
-    PREV_IMG
+    PREV_IMG,
+    NEXT_AUDIO,
+    PREV_AUDIO,
+    PLAY_PAUSE
 } from "./actionTypes"
 
 const nextImg = (nextImgId) => {
@@ -32,9 +35,30 @@ const setRemote = (json) => {
     }
 }
 
+const playPause = (status) => {
+    return {
+        type: PLAY_PAUSE,
+        payload: status,
+    }
+}
+const nextAudio = (nextAudioId) => {
+    return {
+        type: NEXT_AUDIO,
+        payload: nextAudioId,
+    }
+}
+const prevAudio = (prevAudioId) => {
+    return {
+        type: PREV_AUDIO,
+        payload: prevAudioId,
+    }
+}
 export const actions = {
     nextImg,
     prevImg,
     changeSource,
-    setRemote
+    setRemote,
+    playPause,
+    nextAudio,
+    prevAudio
 }

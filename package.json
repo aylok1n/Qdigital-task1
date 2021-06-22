@@ -12,6 +12,7 @@
   "dependencies": {
     "react": "17.0.1",
     "react-native": "0.64.2",
+    "react-native-track-player": "^1.2.7",
     "react-redux": "^7.2.4",
     "react-router-dom": "^5.2.0",
     "react-router-native": "^5.2.0",

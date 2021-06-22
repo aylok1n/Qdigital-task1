@@ -1,7 +1,7 @@
 import React from 'react';
-import {Link} from 'react-router-native';
-import {View, Text} from 'react-native';
-import {styles} from '../../styles/styles';
+import { Link } from 'react-router-native';
+import { View, Text } from 'react-native';
+import { styles } from '../../styles/styles';
 
 export default class Home extends React.Component {
   constructor(props) {
