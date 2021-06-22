@@ -14,21 +14,21 @@ export const reducer = (state = initialState, action) => {
             return {
                 ...state, imgId: action.payload
             }
-        case PREV_IMG:
-            return {
-                ...state, imgId: action.payload
-            }
-        case CHANGE_SOURCE:
-            return {
-                ...state, source: action.payload
-            }
-        case SET_REMOTE:
-            return {
-                ...state, remote: action.payload
-            }
+            case PREV_IMG:
+                return {
+                    ...state, imgId: action.payload
+                }
+                case CHANGE_SOURCE:
+                    return {
+                        ...state, source: action.payload
+                    }
+                    case SET_REMOTE:
+                        return {
+                            ...state, remote: action.payload
+                        }
 
-        default:
-            return state
+                        default:
+                            return state
     }
 
 }
