@@ -40,7 +40,6 @@ export const styles = StyleSheet.create({
     },
     slider: {
         height: '95%',
-        display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
         flexDirection: 'column'
