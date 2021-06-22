@@ -5,7 +5,7 @@ import { View, Text, Button, Image, TouchableOpacity } from 'react-native';
 import { actions } from '../redux/actions'
 import { styles } from '../../styles/styles'
 
- class Slider extends React.Component{
+class Slider extends React.Component{
 
     constructor(props) {
         super(props)
@@ -63,22 +63,29 @@ import { styles } from '../../styles/styles'
         return(
             <View style={styles.slider}>
                 <View style={styles.sliderWrapper}>
-                    <TouchableOpacity style={styles.sliderButton} onPress={this.onPrev}>
+                    <TouchableOpacity style={styles.sliderButton} 
+                        onPress={this.onPrev}>
                         <Text style={styles.sliderButtonText}>Prev</Text>
                     </TouchableOpacity>
+
                     { (this.props.source === 'local' ) ? 
                         <Image style={styles.sliderImg} source={this.props.local[this.props.imgId]}/> :
                         <Image style={styles.sliderImg} source={{uri : this.props.remote[this.props.imgId]}}/>
                     }
-                    <TouchableOpacity style={styles.sliderButton} onPress={this.onNext}>
+
+                    <TouchableOpacity style={styles.sliderButton} 
+                        onPress={this.onNext}>
                         <Text style={styles.sliderButtonText}>Next</Text>
                     </TouchableOpacity>
                 </View>
-                <TouchableOpacity style={styles.sliderButton} onPress={this.onChangeSource}>
+
+                <TouchableOpacity style={styles.sliderButton} 
+                    onPress={this.onChangeSource}>
                         <Text style={styles.sliderButtonText}>
                             switch to { this.props.source === 'local' ? 'remote' : 'local' }
                         </Text>
                 </TouchableOpacity>
+                
                 <Link style={styles.sliderButton} to="/" >
                     <Text style={styles.sliderButtonText}>back to main</Text>
                 </Link>

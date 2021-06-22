@@ -26,7 +26,7 @@ class App extends React.Component {
     return (
       <Provider store={store}>
         <NativeRouter>
-          <View style={styles.container}>
+          <View style={styles.App}>
 
             <Route exact path="/" component={ Home } />
             <Route path="/slider" component={ Slider } />
