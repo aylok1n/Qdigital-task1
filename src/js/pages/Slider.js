@@ -85,9 +85,9 @@ class Slider extends React.Component{
                             switch to { this.props.source === 'local' ? 'remote' : 'local' }
                         </Text>
                 </TouchableOpacity>
-                
+
                 <Link style={styles.sliderButton} to="/" >
-                    <Text style={styles.sliderButtonText}>back to main</Text>
+                    <Text style={styles.sliderButtonTextUnderline}>back to main</Text>
                 </Link>
             </View>
         )

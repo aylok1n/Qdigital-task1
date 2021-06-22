@@ -21,8 +21,9 @@ export const styles = StyleSheet.create({
     navItem: {
         flex: 1,
         alignItems: "center",
-        padding: 10,
+        paddingVertical: 20,
         backgroundColor: '#e5e5e5',
+        borderWidth:1
     },
     topic: {
         textAlign: "center",
@@ -41,7 +42,8 @@ export const styles = StyleSheet.create({
         backgroundColor: '#000',
     },
     homeButtonText: {
-        color: "#FFF"
+        color: "#FFF",
+        textDecorationLine: 'underline',
     },
     slider: {
         height: '95%',
@@ -62,9 +64,15 @@ export const styles = StyleSheet.create({
     sliderButton: {
         padding: 10,
         backgroundColor: '#000',
-        marginTop: 10,
+        marginTop: 5,
+        marginLeft: 5,
+        marginRight: 5
     },
     sliderButtonText: {
+        color: "#FFF"
+    },
+    sliderButtonTextUnderline : {
+        textDecorationLine: 'underline',
         color: "#FFF"
     }
 });
