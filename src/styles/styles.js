@@ -8,6 +8,9 @@ export const styles = StyleSheet.create({
         paddingBottom: 50,
         height: '100%'
     },
+    header: {
+        fontSize: 20
+    },
     nav: {
         position: 'absolute',
         bottom: 0,
@@ -21,6 +24,10 @@ export const styles = StyleSheet.create({
         paddingVertical: 20,
         backgroundColor: '#e5e5e5',
         borderWidth:1
+    },
+    topic: {
+        textAlign: "center",
+        fontSize: 15
     },
     home: {
         flex: 1,

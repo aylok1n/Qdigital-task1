@@ -22,7 +22,6 @@ const store = createStore( reducer, compose(
 )
 
 class App extends React.Component {
-  
   render(){
     return (
       <Provider store={store}>
